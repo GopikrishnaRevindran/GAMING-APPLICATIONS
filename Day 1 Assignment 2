@@ -1,0 +1,59 @@
+import java.util.stream.IntStream;
+public class CricketBatsman {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int []runs = new int[30];
+		int zeroes = 0;
+		int ones = 0;
+		int twos = 0;
+		int threes = 0;
+		int fours = 0;
+		int sixs = 0;
+		for(int i=0; i<29; i++)
+		{
+			runs[i] = (int) (Math.random()*7);
+		}
+		for(int i=0; i<runs.length; i++)
+		{
+			if (runs[i]==0)
+				zeroes++;
+		}
+		for(int i=0; i<runs.length; i++)
+		{
+			if (runs[i]==1)
+				ones++;
+		}
+		for(int i=0; i<runs.length; i++)
+		{
+			if (runs[i]==2)
+				twos++;
+		}
+		for(int i=0; i<runs.length; i++)
+		{
+			if (runs[i]==3)
+				threes++;
+		}
+		for(int i=0; i<runs.length; i++)
+		{
+			if (runs[i]==4)
+				fours++;
+		}
+		
+		for(int i=0; i<runs.length; i++)
+		{
+			if (runs[i]==6)
+				sixs++;
+		}
+		int sum = IntStream.of(runs).sum();
+		System.out.println("TOTAL:"+sum);
+		System.out.println("ZEROES:"+zeroes);
+		System.out.println("ONES:"+ones);
+		System.out.println("TWOS:"+twos);
+		System.out.println("THREES:"+threes);
+		System.out.println("FOURS:"+fours);
+		System.out.println("SIXS:"+sixs);
+		double strikerate = (sum/30)*100 ;
+		System.out.println("strikrate:"+strikerate);
+	}
+}
