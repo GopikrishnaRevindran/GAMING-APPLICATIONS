@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class ElectricityBill {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the units");
+		float units = sc.nextFloat();
+		sc.close();
+		double totalbill;
+		if (units<100)
+		{
+			totalbill = units*1.20;
+			System.out.println("total bill is:"+totalbill);
+		}
+		else if (units>100 && units<=300)
+		{
+			totalbill = 100*1.20 + (units-100)*2;
+			System.out.println("total bill is:"+totalbill);
+		}
+		else if (units>300)
+		{
+			totalbill = 100*1.2 + 200*2 + (units-300)*3;
+			System.out.println("total bill:"+totalbill);
+			
+		}
+	}
+
+}
