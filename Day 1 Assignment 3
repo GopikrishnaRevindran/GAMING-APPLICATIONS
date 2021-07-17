@@ -1,0 +1,119 @@
+import java.util.stream.IntStream;
+
+public class Batsman {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println(" 1st Innings: ");
+		Innings i1 = new Innings();
+		i1.calculate();
+		
+		System.out.println(" 2nd Innings : ");
+		Innings i2 = new Innings();
+		i2.calculate();
+		
+		System.out.println(" 3rd Innings : ");
+		Innings i3 = new Innings();
+		i3.calculate();
+		
+		System.out.println(" 4th Innings : ");
+		Innings i4 = new Innings();
+		i4.calculate();
+		
+		System.out.println(" 5th Innings : ");
+		Innings i5 = new Innings();
+		i5.calculate();
+		
+		
+		
+		System.out.println("Average score : ");
+		System.out.println((i1.sum+i2.sum+i3.sum+i4.sum+i5.sum)/300);
+		
+
+		System.out.println("Total zeroes scored : ");
+		System.out.println(i1.zeroes+i2.zeroes+i3.zeroes+i4.zeroes+i5.zeroes);
+		
+		System.out.println("Total ones scored : ");
+		System.out.println(i1.ones+i2.ones+i3.ones+i4.ones+i5.ones);
+
+		System.out.println("Total twos scored : ");
+		System.out.println(i1.twos+i2.twos+i3.twos+i4.twos+i5.twos);
+		
+		System.out.println("Total threes scored : ");
+		System.out.println(i1.threes+i2.threes+i3.threes+i4.threes+i5.threes);
+
+		System.out.println("Total fours scored : ");
+		System.out.println(i1.fours+i2.fours+i3.fours+i4.fours+i5.fours);
+
+		System.out.println("Total sixs scored : ");
+		System.out.println(i1.sixs+i2.sixs+i3.sixs+i4.sixs+i5.sixs);
+		
+		
+	
+	}
+
+}
+class Innings
+{
+
+	
+	int []runs = new int[30];
+	int zeroes = 0;
+	int ones = 0;
+	int twos = 0;
+	int threes = 0;
+	int fours = 0;
+	int sixs = 0;
+	int sum;
+	void calculate()
+	{
+	for(int i=0; i<29; i++)
+	{
+		runs[i] = (int) (Math.random()*7);
+	}
+
+		for(int i=0; i<runs.length; i++)
+	{
+		if (runs[i]==0)
+			zeroes++;
+	}
+	for(int i=0; i<runs.length; i++)
+	{
+		if (runs[i]==1)
+			ones++;
+	}
+	for(int i=0; i<runs.length; i++)
+	{
+		if (runs[i]==2)
+			twos++;
+	}
+	for(int i=0; i<runs.length; i++)
+	{
+		if (runs[i]==3)
+			threes++;
+	}
+	for(int i=0; i<runs.length; i++)
+	{
+		if (runs[i]==4)
+			fours++;
+	}
+	
+	for(int i=0; i<runs.length; i++)
+	{
+		if (runs[i]==6)
+			sixs++;
+	}
+	sum = IntStream.of(runs).sum();
+	System.out.println("TOTAL:"+sum);
+	System.out.println("ZEROES:"+zeroes);
+	System.out.println("ONES:"+ones);
+	System.out.println("TWOS:"+twos);
+	System.out.println("THREES:"+threes);
+	System.out.println("FOURS:"+fours);
+	System.out.println("SIXS:"+sixs);
+	double strikerate = (sum/30)*100 ;
+	System.out.println("strikrate:"+strikerate);
+	}
+}
+
