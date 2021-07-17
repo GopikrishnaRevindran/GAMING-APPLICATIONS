@@ -1,0 +1,73 @@
+class Account
+{
+	private int accountNo;
+	private double accountBalance;
+	private String accountPassword;
+	private static String bankname;
+	
+	static void setBankName(String name)
+	{
+		bankname = name;
+	}
+	
+	Account()
+	{
+		
+	}
+	Account(int accountNo, double accountBalance, String accountPassword)
+	{
+		this.accountNo = accountNo;
+		this.accountBalance = accountBalance;
+		this.accountPassword = accountPassword;
+		
+	}
+	protected void setbankName(String bankname)
+	{
+		this.bankname = bankname;
+	}
+	
+	protected String getbankName()
+	{
+		return bankname;
+	}
+	
+	protected int getAccountNo() {
+		return accountNo;
+	}
+	protected void setAccountNo(int accountNo) {
+		this.accountNo = accountNo;
+	}
+	protected double getAccountBalance() {
+		return accountBalance;
+	}
+	protected void setAccountBalance(double accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+	protected String getAccountPassword() {
+		return accountPassword;
+	}
+	protected void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+	}
+	
+	void displayAccount()
+	{
+		System.out.println("WELCOME TO " + bankname );
+		System.out.println("Account Number: "+ accountNo);
+		System.out.println("Account Balance: "+ accountBalance);
+	}
+}
+public class BankAccount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Account.setBankName("ICICI");
+		Account account1 = new Account(213232,6700,"def'");
+		Account account2 = new Account(63464395, 1454.676, "abc");
+		account1.displayAccount();
+		account2.displayAccount();
+		
+
+	}
+
+}
